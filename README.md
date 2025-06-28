@@ -17,14 +17,14 @@ ReplicaSSG extends the [Replica dataset](https://github.com/facebookresearch/Rep
 # Table of Contents
 - [Preprocessing](#prerocessing)
   - [1. Download the Replica Dataset](#1-download-the-replica-dataset)
-  - [2. Copy the Annotations](#2-copy-the-annotations)
-  - [3. Convert Mesh to Point Cloud for FROSS Evaluation](#3-convert-mesh-to-point-cloud-for-fross-evaluation)
-  - [4. Convert Camera Trajectories to ORB-SLAM3 Format (Optional)](#4-convert-camera-trajectories-to-orb-slam3-format-optional)
+  - [2. Copy annotations](#2-copy-annotations)
+  - [3. Convert mesh to point cloud for FROSS evaluation](#3-convert-mesh-to-point-cloud-for-fross-evaluation)
+  - [4. Convert camera trajectories to ORB-SLAM3 format (optional)](#4-convert-camera-trajectories-to-orb-slam3-format-optional)
 - [Annotation tools](#annotation-tools)
-  - [1. Install Dependencies](#1-install-dependencies)
-  - [2. Convert Object Annotations to 3RScan Format (`files/object.json`)](#2-convert-object-annotations-to-3rscan-format-filesobjectjson)
-  - [3. Label Relationships (`files/relationships.json`)](#3-label-relationships-filesrelationshipsjson)
-  - [4. Extract Camera Path (`files/trajectories.json`)](#4-extract-camera-path-filestrajectoriesjson)
+  - [1. Install dependencies](#1-install-dependencies)
+  - [2. Convert object annotations to 3RScan format (`files/object.json`)](#2-convert-object-annotations-to-3rscan-format-filesobjectjson)
+  - [3. Label relationships (`files/relationships.json`)](#3-label-relationships-filesrelationshipsjson)
+  - [4. Extract camera path (`files/trajectories.json`)](#4-extract-camera-path-filestrajectoriesjson)
 - [Citation](#citation)
 
 ## Prerocessing
@@ -33,19 +33,19 @@ ReplicaSSG extends the [Replica dataset](https://github.com/facebookresearch/Rep
 ./download.sh Replica/data
 ```
 
-#### 2. Copy the Annotations
+#### 2. Copy annotations
 ```bash
 mkdir Replica/ReplicaSSG
 cp files/* Replica/ReplicaSSG
 ```
 
-#### 3. Convert Mesh to Point Cloud for FROSS Evaluation
+#### 3. Convert mesh to point cloud for FROSS evaluation
 The `extract_instance_ply.py` script converts point cloud instance segmentation labels from faces to points, following the format used in 3DSSG.
 ```bash
 python extract_instance_ply.py --replica_path Replica
 ```
 
-#### 4. Convert Camera Trajectories to ORB-SLAM3 Format (Optional)
+#### 4. Convert camera trajectories to ORB-SLAM3 format (optional)
 This is useful for evaluating ORB-SLAM3 performance on the ReplicaSSG dataset.
 ```bash
 python convert_trajectory.py --replica_path Replica
@@ -56,18 +56,18 @@ The annotated 3D scene graphs and camera paths are already provided in the `file
 
 However, if you want to manually annotate the dataset, you can use the provided scripts.
 
-#### 1. Install Dependencies
+#### 1. Install dependencies
 ```bash
 pip install git+https://github.com/facebookresearch/habitat-sim@v0.2.2
 pip install opencv-python pillow scipy tqdm noise
 ```
 
-#### 2. Convert Object Annotations to 3RScan Format (`files/object.json`)
+#### 2. Convert object annotations to 3RScan format (`files/object.json`)
 ```bash
 python extract_objects.py --replica_path Replica
 ```
 
-#### 3. Label Relationships (`files/relationships.json`)
+#### 3. Label relationships (`files/relationships.json`)
 The `labeler.py` allows for manual labeling of the relationships in the ReplicaSSG dataset.
 
 - W, A, S, D, Z, X keys for moving the camera forward, left, backward, right, up, down.
@@ -82,7 +82,7 @@ export SCENE="apartment_0"
 python labeler.py --replica_path Replica --scene $SCENE --replica_to_vg_path Replica/ReplicaSSG/replica_to_visual_genome.json --relationship_path Replica/ReplicaSSG/relationships.json
 ```
 
-#### 4. Extract Camera Path (`files/trajectories.json`)
+#### 4. Extract camera path (`files/trajectories.json`)
 The `extract_path.py` script extracts the camera path from the Replica dataset given the keyframes.
 
 - W, A, S, D, Z, X keys for moving the camera forward, left, backward, right, up, down.
