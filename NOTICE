@@ -1,0 +1,25 @@
+ReplicaSSG
+Copyright (c) 2025 Hao-Yu Hou
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+--------------------------------------------------------------------------------------
+
+This code is designed to work with the Replica Dataset, which is provided by Facebook Technologies, LLC (“FB”) under the Replica Dataset Research Terms.
+
+The Replica Dataset is licensed for non-commercial, research, and educational use only. Use of this dataset is subject to additional terms and conditions that are not covered by the Apache 2.0 license.
+
+By using this code in conjunction with the Replica Dataset, you agree to comply with both the Apache 2.0 License and the Replica Dataset Research Terms:
+https://github.com/facebookresearch/Replica-Dataset/blob/main/LICENSE
+
+This notice does not modify the terms of the Apache License, Version 2.0, which governs the use of the code in this repository.
