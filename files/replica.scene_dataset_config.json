@@ -1,0 +1,44 @@
+{
+  "stages": {
+    "paths": {
+      ".json": [
+        "*_[0-9]/habitat/replica_stage.stage_config.json"
+      ]
+    },
+    "default_attributes": {
+      "shader_type": "flat",
+      "up": [
+        0,
+        0,
+        1
+      ],
+      "front": [
+        0,
+        1,
+        0
+      ],
+      "semantic_up": [
+        0,
+        1,
+        0
+      ],
+      "semantic_front": [
+        0,
+        0,
+        -1
+      ],
+      "origin": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "objects": {},
+  "light_setups": {},
+  "scene_instances": {
+    "default_attributes": {
+      "default_lighting": "no_lights"
+    }
+  }
+}

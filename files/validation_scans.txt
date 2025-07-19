@@ -1,1 +1,7 @@
+apartment_0
+office_0
+office_2
+room_0
 frl_apartment_0
+frl_apartment_1
+frl_apartment_2

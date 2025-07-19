@@ -211,11 +211,11 @@ class Viewer:
                     x1, x2 = np.min(coords[1]), np.max(coords[1])
                     y1, y2 = np.min(coords[0]), np.max(coords[0])
                     x1, x2, y1, y2 = int(x1), int(x2), int(y1), int(y2)
-                    f.write(f"{id} {x1} {y1} {x2} {y2}\n")                
+                    f.write(f"{id} {x1} {y1} {x2} {y2}\n")
 
             total_frame_idx += 1
 
-        
+
 if __name__ == "__main__":
     args = ArgumentParser()
     args.add_argument("--replica_path", type=Path)
